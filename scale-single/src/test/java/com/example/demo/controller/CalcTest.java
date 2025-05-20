@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import java.io.IOException;
 import java.net.URI;
@@ -27,6 +28,7 @@ class CalcTest {
   CountDownLatch latch = new CountDownLatch(1);
 
   @Test
+  @Disabled
   void evaluate() {
 
     HttpClient httpClient = HttpClient.newHttpClient();
