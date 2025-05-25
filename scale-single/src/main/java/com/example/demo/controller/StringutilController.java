@@ -19,7 +19,7 @@ public class StringutilController {
   public String add(@RequestParam String str) throws InterruptedException {
     String appName = System.getenv("APP_NAME");
     requestCount.incrementAndGet();
-    Thread.sleep(5000);
+    Thread.sleep(1000);
     return appName + ": " + StringUtils.upperCase(str);
   }
 
