@@ -25,11 +25,11 @@ class CalcTest {
   AtomicInteger errorCount = new AtomicInteger(0);
   AtomicInteger successCount = new AtomicInteger(0);
   // request count
-  int requestsize = 20;
+  int requestsize = 100;
   ExecutorService executorService = Executors.newFixedThreadPool(requestsize);
   //   NGINX URL
-//  final String URL = "http://localhost:8889/toUpper?str=abc123";
-  final String URL = "http://localhost:8081/toUpper?str=abc123";
+  final String URL = "http://localhost:8889/toUpper?str=abc123";
+//  final String URL = "http://localhost:8081/toUpper?str=abc123";
 
 
   CountDownLatch latch = new CountDownLatch(1);

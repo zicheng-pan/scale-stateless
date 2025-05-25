@@ -46,19 +46,45 @@ Knowledge sharing scale &amp; stateless
 * 优化成本：根据实际负载动态调整资源，避免资源浪费。
 * 提升用户体验：通过快速响应请求，提供更好的用户体验。
 
-
 ### 3.水平拓展的问题
-
-服务器统计数据不对了
+[幂等性]
+服务器统计数据不对了。
+分析请求不幂等的原因，是因为这里的服务是有状态的服务。
 
 ### 4.如何解决
+将服务拆分成为计算服务和存储服务。<br>
+引入数据存储服务【redis】，将原有的服务变成无状态服务【Stateless】,引入计算服务【Stateful】。
+![img.png](./readme_img/引入数据存储服务.png)
 
-引入数据存储服务【redis】
+### 5. 具体的解决步骤
 
+#### 1. 状态外置化方案【将状态数据剥离到数据存储服务】
+* 会话状态迁移：Spring Session + Redis
+* 文件存储：对象存储替代本地文件系统
+* 事务管理：分布式日志管理系统
+* 配置中心：Consul/ZooKeeper替代本地配置文件
 
+#### 2. 架构设计
 
+* 采用消息队列解耦：使用MQ消息队列
 
-### 3.微服务架构下直接使用Stateless和水平SCALE的好处
+* 微服务设计：计算服务和存储服务分离
+
+### 6. 练习下面的架构设计中哪些可以无脑水平拓展
+```mermaid
+graph LR
+Client -->|发送消息| Command[命令服务]
+Command -->|写入| MySQL[(主库)]
+Command -->|发布事件| RabbitMQ
+RabbitMQ -->|消费| Sync[数据同步服务]
+Sync -->|写入| Elasticsearch
+Sync -->|更新| Redis
+Client -->|读取动态流| Query[查询服务]
+Query --> Elasticsearch
+Query --> Redis
+```
+
+### 7.微服务架构下直接使用Stateless和水平SCALE的好处
 
 * 微服务架构的以下特性依赖于水平扩展：
 * 独立部署与扩展：每个服务可以根据其负载需求独立扩展。

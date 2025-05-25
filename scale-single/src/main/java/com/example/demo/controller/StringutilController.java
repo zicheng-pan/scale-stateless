@@ -25,7 +25,7 @@ public class StringutilController {
   public String add(@RequestParam String str) throws InterruptedException {
 //    引入redis
     stringRedisTemplate.opsForValue().increment("requests-count");
-    
+
     String appName = System.getenv("APP_NAME");
     requestCount.incrementAndGet();
     Thread.sleep(2000);
@@ -36,7 +36,7 @@ public class StringutilController {
   public int getRequestCount() {
 //    使用redis中的内容
 //    stringRedisTemplate.opsForValue().increment("requests-count");
-    return Integer.parseInt(stringRedisTemplate.opsForValue().get("requests-count"));
+    return Integer.parseInt(stringRedisTemplate.opsForValue().get("requests-count") == null ? "0" : stringRedisTemplate.opsForValue().get("requests-count"));
 //    return this.requestCount.get();
   }
 
