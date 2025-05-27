@@ -57,7 +57,7 @@ Knowledge sharing scale &amp; stateless
 ### 4.如何数据共享
 
 将服务拆分成为计算服务和存储服务。<br>
-引入数据存储服务【redis】，将原有的服务变成无状态服务【Stateless】,引入计算服务【Stateful】。
+引入数据存储服务【redis】，将原有的服务变成无状态服务【Stateless】,引入存储服务【Stateful】。
 ![img.png](./readme_img/引入数据存储服务.png)
 
 ### 5. 解决方案和案例
