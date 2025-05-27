@@ -28,7 +28,7 @@ class TestSingleServer {
   int requestsize = 10;
   ExecutorService executorService = Executors.newFixedThreadPool(requestsize);
 
-  final String URL = "http://localhost:8081/toUpper?str=abc123";
+  final String URL = "http://localhost:8080/toUpper?str=abc123";
 
 
   CountDownLatch latch = new CountDownLatch(1);
