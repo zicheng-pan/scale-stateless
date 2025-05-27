@@ -30,7 +30,6 @@ class TestNginx {
 
   //   NGINX URL
   final String URL = "http://localhost:8889/toUpper?str=abc123";
-//  final String URL = "http://localhost:8081/toUpper?str=abc123";
 
 
   CountDownLatch latch = new CountDownLatch(1);
