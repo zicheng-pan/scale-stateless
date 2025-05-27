@@ -1,4 +1,4 @@
-# scale-stateless
+# scale & stateless
 
 Knowledge sharing scale &amp; stateless
 
