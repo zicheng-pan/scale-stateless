@@ -17,10 +17,9 @@ public class StringutilController {
 
   @GetMapping("/toUpper")
   public String add(@RequestParam String str) throws InterruptedException {
-    String appName = System.getenv("APP_NAME");
     requestCount.incrementAndGet();
     Thread.sleep(2000);
-    return appName + ": " + StringUtils.upperCase(str);
+    return StringUtils.upperCase(str);
   }
 
   @GetMapping("/reqeusts-count")
