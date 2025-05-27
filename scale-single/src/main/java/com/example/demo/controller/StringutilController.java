@@ -36,6 +36,7 @@ public class StringutilController {
   public int getRequestCount() {
 //    return Integer.parseInt(stringRedisTemplate.opsForValue().get("requests-count") == null ? "0" :
 //        Objects.requireNonNull(stringRedisTemplate.opsForValue().get("requests-count")));
+
     return this.requestCount.get();
   }
 
