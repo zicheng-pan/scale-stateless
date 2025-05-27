@@ -20,13 +20,14 @@ import java.util.concurrent.atomic.AtomicInteger;
 /**
  * Copyright (c) Jaguar Land Rover Ltd 2024. All rights reserved
  */
-class CalcTest {
+class TestNginx {
 
   AtomicInteger errorCount = new AtomicInteger(0);
   AtomicInteger successCount = new AtomicInteger(0);
   // request count
   int requestsize = 100;
   ExecutorService executorService = Executors.newFixedThreadPool(requestsize);
+
   //   NGINX URL
   final String URL = "http://localhost:8889/toUpper?str=abc123";
 //  final String URL = "http://localhost:8081/toUpper?str=abc123";
