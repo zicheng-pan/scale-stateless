@@ -72,7 +72,7 @@ Knowledge sharing scale &amp; stateless
 
 ### 7. 总结
 
-* <b>微服务划分可以分成无状态服务（计算型）和有状态服务（存储型）</b> <br>
+* <b>一个服务可以划分成无状态服务（计算型）和有状态服务（存储型）</b> <br>
 * <b>6.1 对于无状态(计算类型)服务: </b><br>
 
 项目中在k8s的配置中定义了HPA（Horizontal Pod Autoscaler）
