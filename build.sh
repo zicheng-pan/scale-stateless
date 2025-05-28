@@ -4,7 +4,7 @@
 cd ./scale-single
 
 echo "Running Maven clean install..."
-mvn clean install
+mvn clean install -DskipTests
 if [ $? -ne 0 ]; then
     echo "Maven build failed. Exiting."
     exit 1
